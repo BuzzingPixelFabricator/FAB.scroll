@@ -5,3 +5,7 @@ While this component is designed with the [BuzzingPixel Fabricator Build Process
 ## `FAB.scroll.disable();`
 
 ## `FAB.scroll.enable();`
+
+## `FAB.scroll.lockWindowScroll();`
+
+## `FAB.scroll.unlockWindowScroll();`
