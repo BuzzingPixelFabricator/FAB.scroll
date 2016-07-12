@@ -3,7 +3,7 @@
  *
  * @package FAB.scroll
  * @author TJ Draper <tj@buzzingpixel.com>
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 // Make sure FAB is defined
@@ -109,6 +109,56 @@ window.FAB = window.FAB || {};
 
 			// Keyboard
 			D.onkeydown = null;
+		},
+
+		/**
+		 * Lock window scroll
+		 */
+		lockWindowScroll: function() {
+			// Save a reference to the object
+			var self = this;
+
+			// Set current scroll positions
+			var x = W.scrollX;
+			var y = W.scrollY;
+
+			// Check if scroll has already been locked
+			if (W.scrollLocked === true) {
+				return;
+			}
+
+			// Save x and y values
+			self.windowCurrentX = x;
+			self.windowCurrentY = y;
+
+			// On window scroll, set back to x and y values
+			W.onscroll = function() {
+				W.scrollTo(x, y);
+			};
+
+			// Set scroll locked as true
+			W.scrollLocked = true;
+		},
+
+		// Unlock window scroll
+		unlockWindowScroll: function() {
+			// Save a reference to the object
+			var self = this;
+
+			// Check if the scroll was locked
+			if (W.scrollLocked === false) {
+				return;
+			}
+
+			// Set scroll locked as false
+			W.scrollLocked = false;
+
+			// Set a timer to prevent weird things from happening
+			setTimeout(function() {
+				W.onscroll = null;
+
+				W.scrollTo(self.windowCurrentX, self.windowCurrentY);
+			}, 300);
 		}
 	};
 })(window.FAB, window, document);
