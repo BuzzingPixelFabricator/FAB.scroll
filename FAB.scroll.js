@@ -91,7 +91,7 @@ window.FAB = window.FAB || {};
 		enable: function() {
 			// Older Firefox
 			if (W.removeEventListener) {
-				W.addEventListener(
+				W.removeEventListener(
 					'DOMMouseScroll',
 					preventDefault,
 					false
