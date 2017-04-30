@@ -1,0 +1,24 @@
+{
+    "name": "fab.scroll",
+    "version": "1.2.0",
+    "description": "Scrolling functions",
+    "homepage": "https://github.com/BuzzingPixelFabricator/fab.scroll",
+    "bugs": "https://github.com/BuzzingPixelFabricator/fab.scroll/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BuzzingPixelFabricator/fab.scroll.git"
+    },
+    "license": "Apache-2.0",
+    "author": "BuzzingPixel, LLC",
+    "contributors": [
+        {
+            "name": "TJ Draper",
+            "url": "https://buzzingpixel.com"
+        }
+    ],
+    "fabricatorJsBuild": {
+        "files": [
+            "src/FAB.scroll.js"
+        ]
+    }
+}
