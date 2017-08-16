@@ -162,4 +162,4 @@ window[window.FABNAMESPACE] = window.window[window.FABNAMESPACE] || {};
             }, 300);
         }
     };
-})(window.FAB, window, document);
+})(window[window.FABNAMESPACE], window, document);
